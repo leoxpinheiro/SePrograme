@@ -1,4 +1,5 @@
 import React from 'react';
+import { StorageService } from '../services/storage.ts';
 
 interface LayoutProps {
   children: React.ReactNode;
