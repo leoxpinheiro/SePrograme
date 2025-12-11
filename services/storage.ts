@@ -1,15 +1,19 @@
-const baseURL = "https://se-programe.vercel.app";
+export const StorageService = {
+  save(key: string, value: any) {
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+    } catch (e) {
+      console.error("Erro ao salvar no storage:", e);
+    }
+  },
 
-export async function getEvents() {
-  const res = await fetch(`${baseURL}/api/events`);
-  return await res.json();
-}
-
-export async function addEvent(event: any) {
-  const res = await fetch(`${baseURL}/api/addEvent`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(event),
-  });
-  return await res.json();
-}
+  load(key: string) {
+    try {
+      const item = localStorage.getItem(key);
+      return item ? JSON.parse(item) : null;
+    } catch (e) {
+      console.error("Erro ao carregar do storage:", e);
+      return null;
+    }
+  }
+};
