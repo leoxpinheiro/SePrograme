@@ -1,8 +1,8 @@
-import fs from "fs";
-import path from "path";
+const fs = require("fs");
+const path = require("path");
 
-export default function handler(req, res) {
+module.exports = (req, res) => {
   const filePath = path.join(process.cwd(), "data", "events.json");
-  const json = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+  const json = JSON.parse(fs.readFileSync(filePath, "utf8"));
   res.status(200).json(json.events);
-}
+};
