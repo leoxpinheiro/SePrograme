@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="https://vitejs.dev/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Se Programe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Outfit', 'Inter', 'sans-serif'],
+              body: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              // Premium Palette from Prompt
+              brand: {
+                primary: '#0047FF', // Azul Royal Premium
+                secondary: '#003599',
+                neon: '#7A00FF',    // Roxo Neon Premium
+                pink: '#FF2D92',    // Rosa Futurista
+                electric: '#3B82F6',
+                
+                // Light Mode Backgrounds
+                surface: '#F0F3FF', // Cinza Azulado
+                white: '#FFFFFF',
+                
+                // Dark Mode Backgrounds
+                dark: '#0C0E12',    // Preto Titan
+                darker: '#06070A',  // Preto Profundo
+                midnight: '#0A0F2C', // Azul Noite
+              },
+              accent: {
+                whatsapp: '#25D366', // Verde WhatsApp Premium
+                warning: '#FFCC00',
+                error: '#FF5A5A',
+              }
+            },
+            borderRadius: {
+              'xl': '16px',
+              '2xl': '24px',
+              '3xl': '32px',
+            },
+            boxShadow: {
+              'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+              'neon': '0 0 20px rgba(0, 71, 255, 0.3)',
+              'neon-purple': '0 0 20px rgba(122, 0, 255, 0.3)',
+              'float': '0 10px 40px -10px rgba(0,0,0,0.15)',
+            },
+            animation: {
+              'marquee': 'marquee 25s linear infinite',
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'slide-up': 'slideUp 0.5s ease-out forwards',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              marquee: {
+                '0%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-50%)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "qrcode.react": "https://esm.sh/qrcode.react@^4.2.0",
+    "react": "https://esm.sh/react@^19.2.1",
+    "react/": "https://esm.sh/react@^19.2.1/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.32.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.1/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-brand-surface dark:bg-brand-darker text-brand-dark dark:text-brand-white antialiased selection:bg-brand-primary selection:text-white transition-colors duration-300">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
