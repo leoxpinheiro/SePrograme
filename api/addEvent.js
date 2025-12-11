@@ -6,7 +6,7 @@ module.exports = (req, res) => {
     return res.status(405).json({ error: "Método não permitido" });
   }
 
-  const filePath = path.join(process.cwd(), "data", "events.json");
+  const filePath = path.join(__dirname, "..", "data", "events.json");
   const json = JSON.parse(fs.readFileSync(filePath, "utf8"));
 
   const newEvent = {
